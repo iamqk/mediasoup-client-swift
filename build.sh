@@ -93,9 +93,9 @@ esac
 echo 'Building WebRTC'
 cd $WEBRTC_DIR
 
-gn gen $BUILD_DIR/WebRTC/device/arm64 --ide=xcode --args='target_os="ios" target_environment="device" target_cpu="arm64" ios_deployment_target="13.0" ios_enable_code_signing=false use_xcode_clang=true is_component_build=false rtc_include_tests=false is_debug=false rtc_libvpx_build_vp9=false enable_ios_bitcode=false use_goma=false rtc_enable_symbol_export=true rtc_include_builtin_audio_codecs=true rtc_include_builtin_video_codecs=true rtc_enable_protobuf=false use_rtti=true use_custom_libcxx=false enable_dsyms=true enable_stripping=true treat_warnings_as_errors=false'
-gn gen $BUILD_DIR/WebRTC/simulator/x64 --ide=xcode --args='target_os="ios" target_environment="simulator" target_cpu="x64" ios_deployment_target="13.0" ios_enable_code_signing=false use_xcode_clang=true is_component_build=false rtc_include_tests=false is_debug=false rtc_libvpx_build_vp9=false enable_ios_bitcode=false use_goma=false rtc_enable_symbol_export=true rtc_include_builtin_audio_codecs=true rtc_include_builtin_video_codecs=true rtc_enable_protobuf=false use_rtti=true use_custom_libcxx=false enable_dsyms=true enable_stripping=true treat_warnings_as_errors=false'
-gn gen $BUILD_DIR/WebRTC/simulator/arm64 --ide=xcode --args='target_os="ios" target_environment="simulator" target_cpu="arm64" ios_deployment_target="13.0" ios_enable_code_signing=false use_xcode_clang=true is_component_build=false rtc_include_tests=false is_debug=false rtc_libvpx_build_vp9=false enable_ios_bitcode=false use_goma=false rtc_enable_symbol_export=true rtc_include_builtin_audio_codecs=true rtc_include_builtin_video_codecs=true rtc_enable_protobuf=false use_rtti=true use_custom_libcxx=false enable_dsyms=true enable_stripping=true treat_warnings_as_errors=false'
+gn gen $BUILD_DIR/WebRTC/device/arm64 --ide=xcode --args='target_os="ios" target_environment="device" target_cpu="arm64" ios_deployment_target="12.0" ios_enable_code_signing=false use_xcode_clang=true is_component_build=false rtc_include_tests=false is_debug=false rtc_libvpx_build_vp9=false enable_ios_bitcode=false use_goma=false rtc_enable_symbol_export=true rtc_include_builtin_audio_codecs=true rtc_include_builtin_video_codecs=true rtc_enable_protobuf=false use_rtti=true use_custom_libcxx=false enable_dsyms=true enable_stripping=true treat_warnings_as_errors=false'
+gn gen $BUILD_DIR/WebRTC/simulator/x64 --ide=xcode --args='target_os="ios" target_environment="simulator" target_cpu="x64" ios_deployment_target="12.0" ios_enable_code_signing=false use_xcode_clang=true is_component_build=false rtc_include_tests=false is_debug=false rtc_libvpx_build_vp9=false enable_ios_bitcode=false use_goma=false rtc_enable_symbol_export=true rtc_include_builtin_audio_codecs=true rtc_include_builtin_video_codecs=true rtc_enable_protobuf=false use_rtti=true use_custom_libcxx=false enable_dsyms=true enable_stripping=true treat_warnings_as_errors=false'
+gn gen $BUILD_DIR/WebRTC/simulator/arm64 --ide=xcode --args='target_os="ios" target_environment="simulator" target_cpu="arm64" ios_deployment_target="12.0" ios_enable_code_signing=false use_xcode_clang=true is_component_build=false rtc_include_tests=false is_debug=false rtc_libvpx_build_vp9=false enable_ios_bitcode=false use_goma=false rtc_enable_symbol_export=true rtc_include_builtin_audio_codecs=true rtc_include_builtin_video_codecs=true rtc_enable_protobuf=false use_rtti=true use_custom_libcxx=false enable_dsyms=true enable_stripping=true treat_warnings_as_errors=false'
 
 cd $BUILD_DIR/WebRTC
 ninja -C device/arm64 sdk
@@ -129,7 +129,7 @@ cmake . -B$BUILD_DIR/libmediasoupclient/device/arm64 \
 	-DCMAKE_CXX_FLAGS="-fvisibility=hidden" \
 	-DLIBSDPTRANSFORM_BUILD_TESTS=OFF \
 	-DIOS_SDK=iphone \
-	-DCMAKE_OSX_DEPLOYMENT_TARGET=14 \
+	-DCMAKE_OSX_DEPLOYMENT_TARGET=12 \
 	-DIOS_ARCHS="arm64" \
 	-DPLATFORM=OS64 \
 	-DCMAKE_OSX_SYSROOT="/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk"
@@ -143,7 +143,7 @@ cmake . -B$BUILD_DIR/libmediasoupclient/simulator/x64 \
 	-DCMAKE_CXX_FLAGS="-fvisibility=hidden" \
 	-DLIBSDPTRANSFORM_BUILD_TESTS=OFF \
 	-DIOS_SDK=iphonesimulator \
-	-DCMAKE_OSX_DEPLOYMENT_TARGET=14 \
+	-DCMAKE_OSX_DEPLOYMENT_TARGET=12 \
 	-DIOS_ARCHS="x86_64" \
 	-DPLATFORM=SIMULATOR64 \
 	-DCMAKE_OSX_SYSROOT="/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator.sdk"
@@ -157,7 +157,7 @@ cmake . -B$BUILD_DIR/libmediasoupclient/simulator/arm64 \
 	-DCMAKE_CXX_FLAGS="-fvisibility=hidden" \
 	-DLIBSDPTRANSFORM_BUILD_TESTS=OFF \
 	-DIOS_SDK=iphonesimulator \
-	-DCMAKE_OSX_DEPLOYMENT_TARGET=14 \
+	-DCMAKE_OSX_DEPLOYMENT_TARGET=12 \
 	-DIOS_ARCHS="arm64"\
 	-DPLATFORM=SIMULATORARM64 \
 	-DCMAKE_OSX_SYSROOT="/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator.sdk"
